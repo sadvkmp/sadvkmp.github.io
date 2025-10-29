@@ -1,0 +1,183 @@
+/* Site theme (all custom styling lives here) */
+:root {
+  --accent: #FF7400;
+}
+
+/* Base */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+/* Offset page content for fixed navbar */
+main { padding-top: 72px; }
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Utilities */
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.border-accent {
+  border-color: var(--accent) !important;
+}
+
+.badge-accent {
+  background-color: var(--accent);
+  color: #101010;
+}
+
+.badge-outline { /* labels */
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Make all badges more pill-like and comfy */
+.badge {
+  border-radius: 9999px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 500;
+}
+
+.link-accent {
+  color: var(--accent);
+  text-decoration: none;
+}
+.link-accent:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Contact labels: lower opacity than values */
+.contact-label {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.btn-accent {
+  --bs-btn-color: #101010;
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #101010;
+  --bs-btn-hover-bg: #ff811a; /* slight darken */
+  --bs-btn-hover-border-color: #ff811a;
+  --bs-btn-focus-shadow-rgb: 255, 116, 0;
+}
+
+.btn-outline-accent {
+  --bs-btn-color: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: #101010;
+  --bs-btn-hover-bg: var(--accent);
+  --bs-btn-hover-border-color: var(--accent);
+  --bs-btn-focus-shadow-rgb: 255, 116, 0;
+}
+
+/* Bootstrap token tweaks for dark theme harmony */
+.bg-dark {
+  background-color: #000000 !important;
+}
+
+.text-secondary {
+  color: #f2f2f2 !important;
+}
+
+.border-secondary {
+  --bs-border-opacity: 1;
+  border-color: rgba(184, 192, 204, 0.25) !important;
+}
+
+/* Cards */
+.card.bg-dark {
+  background-color: #000000 !important;
+}
+
+/* Project titles: stronger size and weight */
+#projects .card-title {
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+
+/* Project images: uniform height */
+#projects .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Project cards: white border, full opacity */
+#projects .card {
+  border-color: #ffffff !important;
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Nav and footer link states */
+.navbar .nav-link {
+  color: #b8c0cc;
+  transition: color .2s ease;
+}
+.navbar .nav-link:hover {
+  color: #ffffff;
+}
+.navbar .nav-link.active {
+  color: var(--accent);
+}
+
+/* Frosted nav background when scrolled */
+.navbar.frosted {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  backdrop-filter: saturate(180%) blur(10px);
+  border-bottom-color: rgba(255,255,255,0.12) !important;
+}
+
+/* Ensure navbar truly sticks to the very top */
+.navbar.fixed-top {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000; /* above content */
+}
+
+footer .nav-link {
+  color: #b8c0cc !important;
+  transition: color .2s ease;
+}
+footer .nav-link:hover {
+  color: #ffffff !important;
+}
+/* Footer links: no selected state color */
+
+/* Mobile + Tablet navbar: inline links in one row when open */
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse.show .navbar-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .navbar .navbar-nav .nav-item {
+    flex: 1 1 0;
+    text-align: center;
+  }
+  .navbar .nav-link {
+    display: inline-block;
+    width: auto;
+  }
+}
